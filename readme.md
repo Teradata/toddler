@@ -1,14 +1,20 @@
 # Teradata Open Domain Dynamic Library for Extraction of Responses (Toddler)
 
-Widely available Large Language Models are trained over large corpuses of data. These corpuses of data cannot include every piece of information that might be needed by its users. Retrieval Augmented Generation (RAG) and Fine Tuning are commonly used techniques to incorporate knowledge that goes beyond their initial training data in the responses provided by LLMs.
+As with any toddler you present Toddler with information and it will respond with a lot of questions :) 
 
-Both Retrieval Augmented Generation and Fine Tuning rely on incorporating new data, either by  crafting a highly relevant narrow context as part of a prompt sent to the model, or by adjusting the model parameters while performing extra rounds of training on relevant data as to their context of interest.
+Now seriously...
 
-In both scenarios having relevant data in the form of questions and answers is beneficial, since this is the format of text that the model will interact with most of the time. The raw data that needs to be incorporated though, is rarely in this format. 
+Large Language Models (LLMs) are trained on extensive corpora of data. These corpora cannot include every piece of information that might be needed by users. Retrieval Augmented Generation (RAG) and fine-tuning are commonly used techniques to incorporate knowledge beyond the initial training data in the responses provided by LLMs.
 
-The purpose of Toddler is to provide a tool that allows inputting a given document (currently pdfs are supported) to an LLM (currently only OpenAI API is supported) to retrieve a JSON array of questions and answers based on the provided document.
+Retrieval Augmented Generation: RAG involves crafting a highly relevant narrow context as part of a prompt sent to the model, effectively retrieving and integrating external information in real-time.
 
-This JSON array can be used later as a dataset for RAG or fine tuning.
+Fine-Tuning: Fine-tuning adjusts the model parameters through extra rounds of training on relevant data, tailoring the model to specific contexts or domains of interest.
+
+Both techniques benefit significantly from having relevant data in the form of questions and answers, as this is the primary interaction format for the model. However, raw data is rarely structured this way.
+
+The purpose of Toddler is to provide a tool that processes a given document (currently, PDFs are supported) and uses an LLM (currently, only the OpenAI API is supported) to generate a JSON array of questions and answers based on the provided document.
+
+This JSON array can later be used as a dataset for RAG or fine-tuning, enhancing the model's performance and relevance in specific applications. For instance, Toddler can help create custom datasets for educational tools, customer support systems, or specialized knowledge bases.
 
 ## Requirements
 - You need to provide an API Key for OpenAI API, currently the only LLM platform supported (Welcome to contribute adding more)
