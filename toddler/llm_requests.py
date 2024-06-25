@@ -1,7 +1,11 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import json
+import logging
 from typing import Any
+
+logging.basicConfig(filename='logs/log.txt', filemode='a', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 load_dotenv()
 client = OpenAI()
@@ -44,8 +48,7 @@ def single_chunk_processing(chunk: dict) -> str:
     try:
       processed_response = json.loads(response)
     except:
-      print("Failed to process response")
-      processed_response = {'question': "Failed to process response", 'answer': "Failed to process response"}
+      logging.error(f"Failed to process chunk: {chunk}")
     return processed_response 
 
 def bulk_chunk_processing(chunks: list) -> list:

@@ -14,3 +14,5 @@ build/
 dist/
 clean_venv/
 /venv
+/logs/*.txt
+/outputs/*.jsonl

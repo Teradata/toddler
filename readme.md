@@ -32,14 +32,38 @@ pip install .
 ```
 
 ## To use Toddler
+
+### Get questions from a PDF
 - You need to provide the path to your target pdf document
-- The inuitial and final page you want to process
+- The initial and final page you want to process
 - The name of your output file don't include the .json extension, it comes by default
     - The directory is also defined by default as outputs
 
 ```bash
-python python toddler/inquire.py <"your pdf full path"> <"initial page"> <"final page"> <"new_output">
+python toddler/inquire.py <"your pdf full path"> <"initial page"> <"final page"> <"new_output">
 ```
+
+### Get questions from a PDF
+- You need to provide the path to your target json document (this should be the output of inquire.py)
+
+- The name of your output file don't include the .json extension, it comes by default
+    - The directory is also defined by default as outputs
+- The name of your output file don't include the .json extension, it comes by default
+    - The directory is also defined by default as outputs
+- The output will look like this
+```json
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "What are the functions used for handling outliers in data cleaning?"}, {"role": "assistant", "content": "The functions used for handling outliers are TD_GetFutileColumns, TD_OutlierFilterFit, and TD_OutlierFilterTransform."}]}
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "Which function is used to handle missing values in data cleaning?"}, {"role": "assistant", "content": "The function used to handle missing values is TD_SimpleImputeFit."}]}
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "What is the purpose of the TD_GetRowsWithoutMissingValues function?"}, {"role": "assistant", "content": "The purpose of the TD_GetRowsWithoutMissingValues function is to get rows without missing values in the data."}]}
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "Which functions are related to parsing data in data cleaning?"}, {"role": "assistant", "content": "The functions related to parsing data are Pack, StringSimilarity, TD_ConvertTo, and Unpack."}]}
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "What is the main purpose of the Pack function?"}, {"role": "assistant", "content": "The main purpose of the Pack function is to pack data from multiple input columns into a single column, simplifying and organizing data sets."}]}
+{"messages": [{"role": "system", "content": "you are becoming an expert on Teradata in-database analytics functions"}, {"role": "user", "content": "How are virtual columns created in the packed column by the Pack function identified?"}, {"role": "assistant", "content": "Virtual columns created by the Pack function are identified by their column name and separated by commas in the packed column."}]}
+```
+- You should provide the content of the system message, like in this case "you are becoming an expert on Teradata in-database analytics functions"
+```bash
+python <"input file"> <"output file"> "you are becoming an expert on Teradata in-database analytics functions"
+```
+
 ## Contributing
 
 1. Fork the project
