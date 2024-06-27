@@ -26,5 +26,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# main.py "./test_data/teradata-analytics.pdf" 27 40 "questions_output" 
